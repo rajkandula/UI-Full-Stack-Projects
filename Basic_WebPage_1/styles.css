@@ -1,0 +1,151 @@
+#box {
+  width: fit-content;
+  border: 4px;
+  background-color: rgb(60, 78, 241);
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header,
+article,
+aside,
+footer {
+  padding: 100px;
+  border: 2px solid #ccc;
+  margin: 10px;
+}
+
+/* Desktop view */
+
+@media (min-width: 750px) {
+  .container2 {
+    flex-direction: row;
+  }
+
+  header,
+  article,
+  aside,
+  footer {
+    flex: 1;
+  }
+}
+
+/* login form */
+body {
+  font-family: Arial, sans-serif;
+  color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 60px;
+
+  border-radius: 25px;
+  background-color: black;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.error {
+  color: red;
+}
+.btn {
+  margin-top: 10px;
+  margin-left: 120px;
+}
+
+/* The animation code */
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: rgb(62, 238, 109);
+  }
+}
+
+.btn2 {
+  margin-top: 20px;
+  margin-left: 120px;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 60px;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: 5;
+  border-radius: 25px;
+  background-color: rgb(146, 62, 237);
+
+  /* transform: rotate(20deg); */
+  /* transform: scale(0.5, 0.5); */
+  /* transform: skewY(20deg); */
+  /* transform: rotateZ(90deg); */
+  /* transform: rotateX(150deg); */
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
+}
+
+.password_req {
+  display: none;
+}
+
+.password_req ul {
+  padding: 0;
+  margin: 0 0 15px;
+  list-style: none;
+}
+.password_req ul li {
+  padding: 8px;
+  color: red;
+  font-weight: 700;
+}
+
+.password_req ul li.active {
+  color: green;
+}
+.password_req ul li span::before {
+  content: "X";
+}
+
+.password_req ul li.active span ::before {
+  content: "<";
+}
+.password_req ul span::after {
+  content: " ";
+  color: green;
+}
+
+.card {
+  width: fit-content;
+  border: 4px;
+  background-color: rgb(60, 78, 241);
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.card a {
+  color: #ccc;
+}

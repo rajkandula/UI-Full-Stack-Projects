@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular</title>
+    <style>
+        table{
+            border-collapse: collapse;
+         
+        }
+        td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        th{
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    </script>
+    <script>
+      var app = angular.module("myModule", [])
+        .controller("myController", function ($scope) {
+          var tech = [
+            { name: "Angular", likes: 0, dislikes: 0 },
+            { name: "React", likes: 0, dislikes: 0 },
+            { name: "Java", likes: 0, dislikes: 0 },
+            { name: "Html", likes: 0, dislikes: 0 },
+          ];
+
+          $scope.tech = tech;
+          $scope.incLikes = function (tech) {
+            tech.likes++;
+          };
+          $scope.incDislikes = function (tech) {
+            tech.dislikes++;
+          };
+        });
+    </script>
+  </head>
+
+  <body ng-app="myModule">
+    <div ng-controller="myController">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Likes</th>
+          <th>Dislikes</th>
+          <th>Likes/Dislikes</th>
+        </tr>
+        <tr ng-repeat="tech in tech">
+          <td>{{tech.name}}</td>
+          <td>{{tech.likes}}</td>
+          <td>{{tech.dislikes}}</td>
+          <td>
+            <input type="button" ng-click="incLikes(tech)" value="likes" />
+            <input
+              type="button"
+              ng-click="incDislikes(tech)"
+              value="dislikes"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

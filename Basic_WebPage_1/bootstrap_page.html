@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Page Example</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bootstrap Page</h1>
+      <!-- <p>This is a simple Bootstrap example.</p> -->
+
+      <table>
+        <tr>
+          <td>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/In0nB0ABaUk?si=9cB1hr4cnin_92vC"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </td>
+
+          <td>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/In0nB0ABaUk?si=9cB1hr4cnin_92vC"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--  -->
+
+    <div class="container mt-4">
+      <h2>Dynamic Table</h2>
+
+      <button class="btn btn-primary" onclick="addRow()">Add Row</button>
+
+      <table class="table table-bordered mt-3" id="dynamic-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="form-control" value="Data 1" /></td>
+            <td><input type="text" class="form-control" value="Data 2" /></td>
+            <td>
+              <button class="btn btn-danger" onclick="deleteRow(this)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function addRow() {
+        const table = document
+          .getElementById("dynamic-table")
+          .getElementsByTagName("tbody")[0];
+        const newRow = table.insertRow(table.rows.length);
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.innerHTML =
+          '<input type="text" class="form-control" value="New Data 1">';
+        cell2.innerHTML =
+          '<input type="text" class="form-control" value="New Data 2">';
+        cell3.innerHTML =
+          '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>';
+      }
+
+      function deleteRow(button) {
+        const row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
+    </script>
+  </body>
+</html>
